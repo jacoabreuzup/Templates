@@ -194,10 +194,20 @@
                                 <key>Path</key>
                                 <string>DesignSystem/CustomTheme.swift</string>
                             </dict>
-                            <key>AppDelegate.swift:implementation:properties:window</key>
+                            <key>SceneDelegate.swift:implementation:properties:window</key>
                             <string>var window: UIWindow? </string>
-                            <key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
-                            <string>BeagleConfig.start()</string>
+                            <key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</key>
+                            <string>BeagleConfig.start()
+guard let windowScene = (scene as? UIWindowScene) else { return }
+window = UIWindow(windowScene: windowScene)
+window?.rootViewController = BeagleScreenViewController(
+    Container(widgetProperties: .init(Flex().grow(1).alignItems(.center).justifyContent(.center))) {
+        Text("Hello world!")
+    }
+)
+
+window?.makeKeyAndVisible()
+                        </string>
                         </dict>
                     </dict>
                     <dict>

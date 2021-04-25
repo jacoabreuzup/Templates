@@ -26,7 +26,6 @@ class BeagleConfig {
 
         registerCustomOperations(in: dependencies)
         registerCustomComponents(in: dependencies)
-        registerCustomControllers(in: dependencies)
         registerCustomActions(in: dependencies)
 
         Beagle.dependencies = dependencies
@@ -48,11 +47,6 @@ class BeagleConfig {
         dependencies.decoder.register(action: CustomAction.self)
         dependencies.decoder.register(action: CustomAnalyticsAction.self)
         /// you can register more custom actions here
-    }
-
-    private static func registerCustomControllers(in dependencies: BeagleDependencies) {
-        dependencies.navigation.registerNavigationController(builder: CustomBeagleNavigationController.init, forId: "CustomBeagleNavigation")
-        /// you can register more custom controllers here
     }
     
     private static func registerCustomOperations(in dependencies: BeagleDependencies) {

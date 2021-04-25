@@ -1,9 +1,9 @@
 // ___FILEHEADER___
 
-import Foundation
+import UIKit
 import Beagle
 
-class CustomCacheManager: CacheManagerProtocol {
+class ___FILEBASENAME___: CacheManagerProtocol {
     func addToCache(_ reference: CacheReference) {
         
     }

@@ -8,6 +8,7 @@ struct ___FILEBASENAME___: Widget {
 
     func toView(renderer: BeagleRenderer) -> UIView {
         /// render your custom component here
+        return UIView()
     }
 
 }
